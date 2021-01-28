@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>Social Auth</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+
+
+  <!-- GOOGLE -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <!-- load bulma css -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- load fontawesome -->
+
+
+
+  <style>
+    .facebook {
+      background-color: #3b5998 !important;
+      color: #fff !important;
+    }
+
+    .fa-facebook-f:before,
+    .fa-facebook:before {
+      content: "\f09a";
+    }
+
+    .linkedin {
+      background-color: #0073b1 !important;
+      color: #fff !important;
+    }
+
+    .fa-linkedin-f:before,
+    .fa-linkedin:before {
+      content: "\f0e1";
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="light-blue lighten-1" role="navigation">
+    <div class="nav-wrapper container">
+      <a id="logo-container" href="#" class="brand-logo">Social Authentication</a>
+    </div>
+  </nav>
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <br><br>
+      <div class="row center">
+        <div class="col s6">
+
+          <div class="card">
+            <div class="card-action">
+              <a href="/auth/facebook" class="waves-effect waves-light btn social facebook">
+                <span class="fa fa-facebook"></span> Sign in with facebook
+              </a>
+            </div>
+
+            <div class="card-action">
+              <a href="/auth/google" class="waves-effect waves-light btn social btn-danger">
+                <span class="fa fa-google"></span> Sign in with Google
+              </a>
+            </div>
+
+            <div class="card-action">
+              <a href="/auth/linkedin" class="waves-effect waves-light btn social linkedin">
+                <span class="fa fa-linkedin"></span> Sign in with Linkedin
+              </a>
+            </div>
+
+            <div class="card-action">
+              <a href="/auth/microsoft" class="waves-effect waves-light btn social linkedin">
+                <span class="fa fa-microsoft"></span> Sign in with Microsoft
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
