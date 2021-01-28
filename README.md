@@ -46,5 +46,5 @@ sudo openssl req -newkey rsa:2048 -new -nodes -x509 -days 3650 -keyout key.pem -
 ```
 npm start
 ```
-6. Open the link [http://localhost:3000](http://localhost:3000)
+6. Open the link [https://localhost:3000](https://localhost:3000)
 
