@@ -3,7 +3,7 @@ const app = express();
 const session = require('express-session');
 const passport = require('passport');
 const cors = require('cors');
-const socketio = require('socket.io')
+const path = require('path');
 
 function getCorsOrigin() {
   //const origin = process.env.CORS_ORIGIN;
@@ -36,6 +36,8 @@ const routes = require('./routes.js');
 const config = require('./config')
 
 app.set('view engine', 'ejs');
+//to use favicon
+app.use(express.static(path.join(__dirname, 'views/pages')));
 
 app.use(session({
   resave: false,
@@ -103,8 +105,3 @@ httpServer.listen(8080, () => {
 httpsServer.listen(3000, () => {
   console.log('HTTPS Server running on port 3000');
 });
-
-// Connecting sockets to the server and adding them to the request 
-// so that we can access them later in the controller
-const io = socketio(httpsServer)
-app.set('io', io)
