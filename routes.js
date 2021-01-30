@@ -31,11 +31,20 @@ router.get('/error', isLoggedIn, function (req, res) {
 router.get('/auth/google',
   passport.authenticate('google', { scope: ['profile', 'email'] }));
 
-router.get('/auth/google/callback',
-  passport.authenticate('google', {
-    successRedirect: '/profile',
-    failureRedirect: '/error'
-  }));
+// router.get('/auth/google/callback',
+//   passport.authenticate('google', {
+//     successRedirect: '/profile',
+//     failureRedirect: '/error'
+//   }));
+
+// Setting up the passport middleware for each of the OAuth providers
+const googleAuth = passport.authenticate('google', { scope: ['profile'] })
+
+const authController = require('./auth.controller')
+
+// Routes that are triggered by the callbacks from each OAuth provider once 
+// the user has authenticated successfully
+router.get('/auth/google/callback', googleAuth, authController.google)
 
 //-----FACEBOOK --------------
 router.get('/auth/facebook', passport.authenticate('facebook', {

@@ -2,11 +2,30 @@ const express = require('express');
 const app = express();
 const session = require('express-session');
 const passport = require('passport');
+const cors = require('cors');
+const socketio = require('socket.io')
+
+function getCorsOrigin() {
+  //const origin = process.env.CORS_ORIGIN;
+  //const origin = 'https://localhost:8088';
+  const origin = '*';
+  if (!origin) throw new Error('CORS_ORIGIN is a required env var.');
+
+  if (origin === '*') return origin;
+
+  return new RegExp(origin);
+}
+
+const corsOptions = {
+  origin: getCorsOrigin(),
+  optionsSuccessStatus: 200
+};
+
+app.use(cors(corsOptions));
 
 const FacebookStrategy = require('passport-facebook').Strategy;
 const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 const LinkedInStrategy = require('passport-linkedin-oauth2').Strategy;
-
 const MicrosoftStrategy = require('passport-microsoft').Strategy;
 
 const https = require('https');
@@ -85,3 +104,7 @@ httpsServer.listen(3000, () => {
   console.log('HTTPS Server running on port 3000');
 });
 
+// Connecting sockets to the server and adding them to the request 
+// so that we can access them later in the controller
+const io = socketio(httpsServer)
+app.set('io', io)

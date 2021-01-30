@@ -3,6 +3,7 @@
 
 <head>
   <title>Social Auth</title>
+
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" type="text/css"
@@ -11,11 +12,6 @@
 
   <!-- GOOGLE -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-  <!-- load bulma css -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <!-- load fontawesome -->
-
-
 
   <style>
     .facebook {
@@ -23,9 +19,9 @@
       color: #fff !important;
     }
 
-    .fa-facebook-f:before,
-    .fa-facebook:before {
-      content: "\f09a";
+    .google {
+      background-color: #dd4b39 !important;
+      color: #fff !important;
     }
 
     .linkedin {
@@ -33,9 +29,9 @@
       color: #fff !important;
     }
 
-    .fa-linkedin-f:before,
-    .fa-linkedin:before {
-      content: "\f0e1";
+    .microsoft {
+      background-color: #fff !important;
+      color: #000 !important;
     }
   </style>
 </head>
@@ -46,34 +42,34 @@
       <a id="logo-container" href="#" class="brand-logo">Social Authentication</a>
     </div>
   </nav>
-  <div class="section no-pad-bot" id="index-banner">
+  <div class="section" id="index-banner">
     <div class="container">
       <br><br>
       <div class="row center">
-        <div class="col s6">
+        <div class="col">
 
           <div class="card">
             <div class="card-action">
-              <a href="/auth/facebook" class="waves-effect waves-light btn social facebook">
+              <a href="/auth/facebook" class="btn social facebook">
                 <span class="fa fa-facebook"></span> Sign in with facebook
               </a>
             </div>
 
             <div class="card-action">
-              <a href="/auth/google" class="waves-effect waves-light btn social btn-danger">
-                <span class="fa fa-google"></span> Sign in with Google
+              <a href="/auth/google" class="btn social google">
+                <span class="fa fa-google fa-fw"></span> Sign in with Google
               </a>
             </div>
 
             <div class="card-action">
-              <a href="/auth/linkedin" class="waves-effect waves-light btn social linkedin">
+              <a href="/auth/linkedin" class="btn social linkedin">
                 <span class="fa fa-linkedin"></span> Sign in with Linkedin
               </a>
             </div>
 
             <div class="card-action">
-              <a href="/auth/microsoft" class="waves-effect waves-light btn social linkedin">
-                <span class="fa fa-microsoft"></span> Sign in with Microsoft
+              <a href="/auth/microsoft" class="btn social microsoft">
+                <span class="fa fa-windows" aria-hidden="true"></span> Sign in with Microsoft
               </a>
             </div>
           </div>
